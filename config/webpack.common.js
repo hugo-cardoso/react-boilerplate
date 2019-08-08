@@ -13,8 +13,8 @@ module.exports = {
   },
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, '../dist')
+    filename: '[name].[hash].js',
+    path: path.resolve(__dirname, '../build')
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -48,7 +48,7 @@ module.exports = {
           'sass-loader',
         ],
       },{
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: [{
           loader: 'file-loader',
           options: {
